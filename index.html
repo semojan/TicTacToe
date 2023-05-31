@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/overlay.css">
+    <link rel="stylesheet" href="styles/configuration.css">
+    <link rel="stylesheet" href="styles/game.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <title>tic tac toe</title>
+    <script src="scripts/configuration.js" defer></script>
+    <script src="scripts/game.js" defer></script>
+    <script src="scripts/index.js" defer></script>
+</head>
+
+<body>
+    <div id="backdrop"></div>
+    <header>
+        <h1>Play Tic, Tac, Toe</h1>
+        <p>built with   HTML, CSS, and JavaScript</p>
+    </header>
+    <main>
+        <aside id="config" class="modal col-xl-6 col-m-11">
+            <h2>Choose your name</h2>
+            <form>
+                <div>
+                    <label for="userName">player name</label>
+                    <input type="text" name="userName" id="userName" maxlength="15"/>
+                </div>
+                <p id="configErrors"></p>
+                <div>
+                    <button type="reset" class="altbtn" id="cancelConfig">Cancel</button>
+                    <button type="submit">Confirm</button>
+                </div>
+            </form>
+        </aside>
+
+        <section id="playerBox" class="col-xl-9 col-m-11">
+            <ol>
+                <li class="col-xl-4 col-m-11" id="player1Data">
+                    <h2>Player 1</h2>
+                    <h3>PLAYER NAME</h3>
+                    <p>X</p>
+                    <button type="submit" id="editPlayer1" data-playerid="1">Edit</button>
+                </li>
+                <li class="col-xl-4 col-m-11" id="player2Data">
+                    <h2>Player 2</h2>
+                    <h3>PLAYER NAME</h3>
+                    <p>O</p>
+                    <button type="submit" id="editPlayer2" data-playerid="2">Edit</button>
+                </li>
+            </ol>
+            <button id="newGame">Start New Game</button>
+        </section>
+
+        <section id="theGame" class="col-xl-7 col-m-12">
+            <article id="gameResult" class="col-xl-11 col-m-11">
+                <h3>You WON <span id="winner"></span>!</h3>
+                <p>click "Start New Game" button above to start a new game</p>
+            </article>
+
+            <p>It's your turn <span id="activePlayer"></span>!</p>
+            <ol id="gameBoard">
+                <li data-col="1" data-row="1"></li>
+                <li data-col="2" data-row="1"></li>
+                <li data-col="3" data-row="1"></li>
+ 
+                <li data-col="1" data-row="2"></li>
+                <li data-col="2" data-row="2"></li>
+                <li data-col="3" data-row="2"></li>
+ 
+                <li data-col="1" data-row="3"></li>
+                <li data-col="2" data-row="3"></li>
+                <li data-col="3" data-row="3"></li>
+            </ol>
+        </section>
+    </main>
+</body>
+</html>
